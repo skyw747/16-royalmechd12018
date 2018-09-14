@@ -1,0 +1,8 @@
+open terminal!
+1)to create directroy type: mkdir <directory name>
+2)to change the directory: cd <directory>
+3)to start python in terminal type:python3
+4)to close python editor type:exit()
+5)to open/create a text file: gedit <filename>.py
+6)to clear everythin on terminal type: clear
+ 
