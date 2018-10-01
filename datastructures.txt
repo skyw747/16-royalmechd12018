@@ -1,0 +1,41 @@
+ python3
+Python 3.6.5 (default, Apr  1 2018, 05:46:30) 
+[GCC 7.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> list=[1,2,3,4]
+>>> list
+[1, 2, 3, 4]
+>>> list.append(5)
+>>> list
+[1, 2, 3, 4, 5]
+>>> list.count()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: count() takes exactly one argument (0 given)
+>>> count(list)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'count' is not defined
+>>> len(list)
+5
+>>> list2=['a','b','c']
+>>> list2
+['a', 'b', 'c']
+>>> list2.insert(3,'d')
+>>> list2
+['a', 'b', 'c', 'd']
+>>> list2.remove('d')
+>>> list2
+['a', 'b', 'c']
+>>> len(list2)
+3
+>>> list2.index('c')
+2
+>>> count(list2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'count' is not defined
+>>> list2.count('a')
+1
+>>> exit()
+
