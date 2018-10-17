@@ -9,3 +9,4 @@ server.login("siddharthmishra1537@gmail.com", "**********")
 msg = "type program and text ra rae (-_-)"
 server.sendmail("siddharthmishra1537@gmail.com", "thennavanpmohan@gmail.com", msg)
 server.quit()
+print('Message sent!------------------------------------------------------------')
