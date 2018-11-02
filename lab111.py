@@ -2,22 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 label = ['Adventure', 'Action', 'Drama', 'Comedy', 'Thriller/Suspense', 'Horror', 'Romantic Comedy', 'Musical',
          'Documentary', 'Black Comedy', 'Western', 'Concert/Performance', 'Multiple Genres', 'Reality']
-no_movies = [
-    941,
-    854,
-    4595,
-    2125,
-    942,
-    509,
-    548,
-    149,
-    1952,
-    161,
-    64,
-    61,
-    35,
-    5
-]
+no_movies = [941, 854, 4595,2125, 942, 509,548,149,1952,161,64,61,35,5]
 
 def plot_bar_x():
     # this is for plotting purpose
