@@ -11,21 +11,68 @@ def meme():
 		    img.show()
 def google():
 	import webbrowser
-	query=input();
+	print("lemme ask google...")
+	sleep(1)
+	query=input("what you wanna know?");
 	url = "https://www.google.co.in/search?q=" + (str(query)) + "&oq=" + (
 	str(query)) + "&gs_l=serp.12..0i71l8.0.0.0.6391.0.0.0.0.0.0.0.0..0.0....0...1c..64.serp..0.0.0.UiQhpfaBsuU"
 	webbrowser.open(url)
 def youtube():
 	import webbrowser
-	query=input();
+	query=input(" what do you wanna see?");
 	url = "https://www.youtube.com/search?q=" + (str(query)) + "&oq=" + (
 	str(query)) + "&gs_l=serp.12..0i71l8.0.0.0.6391.0.0.0.0.0.0.0.0..0.0....0...1c..64.serp..0.0.0.UiQhpfaBsuU"
 	webbrowser.open(url)					    
 def repeat():
 	print("\nOkay!",a,"what do you want me to do?")
 	print("here's what i can do:")
-	print("\t|tell you a joke| \n\t|take slefie| \n\t|Play a Game| \n\t|Calculator| \n\t|Play a song| \n\t|Play a video|")
-	
+	print("\t|tell you a joke| \n\t|take slefie| \n\t|Play a Game| \n\t|Calculator| \n\t|Play a video| \n\t|search for anything |")
+
+def calcii():
+	# Program make a simple calculator that can add, subtract, multiply and divide using functions
+
+	# This function adds two numbers 
+	def add(x, y):
+	   return x + y
+
+	# This function subtracts two numbers 
+	def subtract(x, y):
+	   return x - y
+
+	# This function multiplies two numbers
+	def multiply(x, y):
+	   return x * y
+
+	# This function divides two numbers
+	def divide(x, y):
+	   return x / y
+
+	print("Select operation.")
+	print("1.Add")
+	print("2.Subtract")
+	print("3.Multiply")
+	print("4.Divide")
+
+	# Take input from the user 
+	choice = input("Enter choice(1/2/3/4):")
+
+	num1 = int(input("Enter first number: "))
+	num2 = int(input("Enter second number: "))
+
+	if choice == '1':
+	   print(num1,"+",num2,"=", add(num1,num2))
+
+	elif choice == '2':
+	   print(num1,"-",num2,"=", subtract(num1,num2))
+
+	elif choice == '3':
+	   print(num1,"*",num2,"=", multiply(num1,num2))
+
+	elif choice == '4':
+	   print(num1,"/",num2,"=", divide(num1,num2))
+	else:
+	   print("Invalid input")
+
 	
 
 def ladder():
@@ -37,7 +84,8 @@ def ladder():
 		return random.randint(1,6)
 
 	while(count<=100):
-		n=input( a,"!",' press r to roll the die:')
+		print(a,"!")
+		n=input('press r to roll the die:')
 		if(n=='r'):	
 			r=myroll()
 			if(r==6):
@@ -107,7 +155,8 @@ def rps():
 	a={1:'rock',2:'paper',3:'scissor'}
 
 	while True:
-		p=input(a,'! enter your choice:')
+		print(a,"!")
+		p=input('enter your choice:')
 
 		c=a[random.randint(1,3)]
 
@@ -218,20 +267,33 @@ if(d=="tell me a joke"):
 		print("\nhmmm...thats! good!")
 		sleep(2)
 		meme()
+		repeat()
 	else:
+		print("\n","-"*42)
 		print("No problem! you can try other things too!")
-			
+		print("-"*42)
+		repeat()	
 elif(d=="take a selfie"):
 	selfie()
 
 elif(d=="play a game"):
 	print("here's what i know to play:")
 	print("\tSnake and ladder \n\t rock paper scissor \n\t tic tac toe")
-	lol=input(" so...",sleep(1),"what did you plan to play?")
+	print(" so...")
+	sleep(1)
+	l=input("what did you plan to play?")
 	if(l=="snake and ladder" or l=="Snake & ladder" or l=="snake" or l=="ladder" ):
 		print("you see! i'm gonna win! ;)")  
 		ladder()
 
-'''elif(d=="play a video"):
+elif(d=="search for anything"):
+	sleep(1)
+	google()
 elif(d=="calculate"):
-elif(d=="play a song"):'''
+	print("i am a maths freak! you know!")
+	sleep(1)
+	calcii()
+elif(d=="play a video"):
+	print("i can singer better than justin bieber but i will let youtube do the work!")
+	sleep(1)
+	youtube()
