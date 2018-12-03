@@ -1,3 +1,19 @@
+def heyskully():
+		import speech_recognition as sr
+
+	r=sr.Recognizer()
+	with sr.Microphone() as mc:
+		r.adjust_for_ambient_noise(mc,duration=5)
+		r.dynamic_energy_thershold = True
+		print('say!!!')
+		audio = r.listen(mc)
+
+	try:
+		u= + r.recognize_google(audio)
+	except sr.UnknownValueError:
+		print("I didn't get that!")
+	except sr. RequestError as e:
+		print('could connect to google: {0}'.format(e))	
 def meme():
 
 		from PIL import Image
@@ -283,8 +299,13 @@ elif(d=="play a game"):
 	sleep(1)
 	l=input("what did you plan to play?")
 	if(l=="snake and ladder" or l=="Snake & ladder" or l=="snake" or l=="ladder" ):
+		sleep(1)
 		print("you see! i'm gonna win! ;)")  
 		ladder()
+	elif (l=="rock paper scissor" or l=="rps" or l=="Rock" or l=="paper" or l=="scissor"):
+		print("i am pro at this game!")
+		rps()
+			
 
 elif(d=="search for anything"):
 	sleep(1)
