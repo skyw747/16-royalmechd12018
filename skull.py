@@ -1,19 +1,18 @@
-def heyskully():
-		import speech_recognition as sr
-
+def heyskully():	
+	import speech_recognition as sr
 	r=sr.Recognizer()
 	with sr.Microphone() as mc:
 		r.adjust_for_ambient_noise(mc,duration=5)
 		r.dynamic_energy_thershold = True
 		print('say!!!')
 		audio = r.listen(mc)
-
 	try:
-		u= + r.recognize_google(audio)
+		heyskully.u=r.recognize_google(audio)
 	except sr.UnknownValueError:
 		print("I didn't get that!")
 	except sr. RequestError as e:
 		print('could connect to google: {0}'.format(e))	
+
 def meme():
 
 		from PIL import Image
@@ -45,49 +44,42 @@ def repeat():
 	print("\t|tell you a joke| \n\t|take slefie| \n\t|Play a Game| \n\t|Calculator| \n\t|Play a video| \n\t|search for anything |")
 
 def calcii():
-	# Program make a simple calculator that can add, subtract, multiply and divide using functions
-
-	# This function adds two numbers 
 	def add(x, y):
 	   return x + y
 
-	# This function subtracts two numbers 
 	def subtract(x, y):
 	   return x - y
 
-	# This function multiplies two numbers
 	def multiply(x, y):
 	   return x * y
 
-	# This function divides two numbers
 	def divide(x, y):
 	   return x / y
 
-	print("Select operation.")
-	print("1.Add")
-	print("2.Subtract")
-	print("3.Multiply")
-	print("4.Divide")
+	print("This is what i have learnt so far:")
+	print("Addition")
+	print("Subtraction")
+	print("Multiplication")
+	print("Division")
 
-	# Take input from the user 
-	choice = input("Enter choice(1/2/3/4):")
+	choice = input("what should i do?")
 
 	num1 = int(input("Enter first number: "))
 	num2 = int(input("Enter second number: "))
 
-	if choice == '1':
+	if choice == 'Addition':
 	   print(num1,"+",num2,"=", add(num1,num2))
 
-	elif choice == '2':
+	elif choice == 'Subtraction':
 	   print(num1,"-",num2,"=", subtract(num1,num2))
 
-	elif choice == '3':
+	elif choice == 'Multiplication':
 	   print(num1,"*",num2,"=", multiply(num1,num2))
 
-	elif choice == '4':
+	elif choice == 'Division':
 	   print(num1,"/",num2,"=", divide(num1,num2))
 	else:
-	   print("Invalid input")
+	   print("I don't know to do that!")
 
 	
 
@@ -203,7 +195,7 @@ def rps():
 			print("\t\t## Scores  ##")
 			print(a,": ",count,"Skully: ",cscore)
 			if(count>cscore):
-				print("you nailed it!")
+				print("you nailed it!",)
 			elif(count<cscore):
 				print("Skully won!")
 			else:
@@ -255,26 +247,30 @@ print('\t\t\t          """*$$$$$$$"')
 print("\t","-"*60)
 print("\t\t||*****Hi there! I'm Skully*******\t||")
 print("\t","-"*60)
-
+sleep(1)
 print("\n","-"*16)
 print("How can i help?")
 print("-"*16)
-
+sleep(1)
 print("\n","-"*38)
 print("can you help me in knowing you better?")
 print("-"*38)
-
+sleep(1)
 print("\n","-"*18)
 a=input("What's your name?")
 print("-"*18)
-
+sleep(1)
 print("\n","-"*30)
 print(a,"...that's a nice name")
 print("-"*30)
 '''b=input("\nyour age?")
 c=input("\nyour gender?")'''
 repeat()
-d=input("tell me!:")	
+d=input("tell me!:")
+#heyskully()
+#print("you told:",heyskully.u)
+#heyskully.u=d
+	
 if(d=="tell me a joke"):
 	print("\ti have got plenty of them! ;)")
 	meme()
@@ -283,13 +279,14 @@ if(d=="tell me a joke"):
 		print("\nhmmm...thats! good!")
 		sleep(2)
 		meme()
-		repeat()
+		break
 	else:
 		print("\n","-"*42)
 		print("No problem! you can try other things too!")
 		print("-"*42)
-		repeat()	
-elif(d=="take a selfie"):
+		break
+
+elif(d=="take a selfie" or d=="selfie" or d=="click a pic" or d=="picture" or d=="photo" or d=="take"):
 	selfie()
 
 elif(d=="play a game"):
