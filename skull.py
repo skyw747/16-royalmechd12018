@@ -1,5 +1,14 @@
-def heyskully():	
+def maps(): 
+	import webbrowser
+	query=input("where do you wanna go?");
+	url = "https://www.google.com/maps/@13.1228551,77.6593282,15zsearch?q=" + (str(query)) + "&oq=" + (
+	str(query)) + "&gs_l=serp.12..0i71l8.0.0.0.6391.0.0.0.0.0.0.0.0..0.0....0...1c..64.serp..0.0.0.UiQhpfaBsuU"
+	webbrowser.open(url)
+
+def heyskully():
 	import speech_recognition as sr
+	global u
+	
 	r=sr.Recognizer()
 	with sr.Microphone() as mc:
 		r.adjust_for_ambient_noise(mc,duration=5)
@@ -7,16 +16,14 @@ def heyskully():
 		print('say!!!')
 		audio = r.listen(mc)
 	try:
-		heyskully.u=r.recognize_google(audio)
+		u=r.recognize_google(audio)
 	except sr.UnknownValueError:
 		print("I didn't get that!")
 	except sr. RequestError as e:
 		print('could connect to google: {0}'.format(e))	
 
 def meme():
-
 		from PIL import Image
-
 		a={1:'/home/dl116/Desktop/img jokes/image1.jpg',2:'/home/dl116/Desktop/img jokes/image2.jpg',3:'/home/dl116/Desktop/img jokes/image3.jpg',4:'/home/dl116/Desktop/img jokes/image4.jpg',5:'/home/dl116/Desktop/img jokes/image6.jpg',6:'/home/dl116/Desktop/img jokes/image7.jpg',7:'/home/dl116/Desktop/img jokes/image8.jpg',8:'/home/dl116/Desktop/img jokes/image9.jpg',9:'/home/dl116/Desktop/img jokes/image10.jpg'}
 
 		import random
@@ -41,7 +48,7 @@ def youtube():
 def repeat():
 	print("\nOkay!",a,"what do you want me to do?")
 	print("here's what i can do:")
-	print("\t|tell you a joke| \n\t|take slefie| \n\t|Play a Game| \n\t|Calculator| \n\t|Play a video| \n\t|search for anything |")
+	print("\t|tell you a joke| \n\t|take slefie| \n\t|Play a Game| \n\t|Calculator| \n\t|Play a video| \n\t|search for anything |\n\t|maps |")
 
 def calcii():
 	def add(x, y):
@@ -207,17 +214,75 @@ def selfie():
 	from time import sleep
 
 	def mymail():
-		return
+			import smtplib 
+			from email.mime.multipart import MIMEMultipart 
+			from email.mime.text import MIMEText 
+			from email.mime.base import MIMEBase 
+			from email import encoders 
+			   
+			fromaddr = "thennavanpmohan@gmail.com"
+			toaddr = "thennavanpmohan@gmail.com"
+			   
+
+			msg = MIMEMultipart() 
+			 
+			msg['From'] = fromaddr 
+			  
+
+			msg['To'] = toaddr 
+			  
+
+			msg['Subject'] = "We did it finally (-_-)"
+			  
+
+			body = "SECURITY ALERT"
+			  
+
+			msg.attach(MIMEText(body, 'plain')) 
+			  
+			  
+			filename = "ten.jpg"
+			attachment = open("/home/dl116/Desktop/ten.jpg", "rb") 
+			  
+
+			p = MIMEBase('application', 'octet-stream') 
+			  
+
+			p.set_payload((attachment).read()) 
+			  
+
+			encoders.encode_base64(p) 
+			   
+			p.add_header('Content-Disposition', "attachment;filename= INTRUDER") 
+			  
+
+			msg.attach(p) 
+			  
+
+			s = smtplib.SMTP('smtp.gmail.com', 587) 
+			  
+
+			s.starttls() 
+			  
+
+			s.login(fromaddr,"GMAIL1943") 
+			  
+
+			text = msg.as_string() 
+			  
+
+			s.sendmail(fromaddr, toaddr, text) 
+			s.quit() 
+			return
 
 	def takesnap():
-		os.system("fswebcam -F 4 /home/dl114/Rahulroy/img/tmp.jpg")
+		os.system("fswebcam -F 4 /home/dl117/Desktop/ten.jpg")
 		return
 
-	for i in range(10):
+	for i in range(1):
 		takesnap()
 		mymail()
 		sleep(5)
-
 
 from time import sleep
 print('\t\t\t       .ed"""" """$$$$be.')
@@ -244,9 +309,9 @@ print('\t\t\t       $$$e   z$$$$$$$$$$')
 print('\t\t\t        "*$c  "$$$$$$$P"')
 print('\t\t\t          """*$$$$$$$"')
 
-print("\t","-"*60)
+
 print("\t\t||*****Hi there! I'm Skully*******\t||")
-print("\t","-"*60)
+
 sleep(1)
 print("\n","-"*16)
 print("How can i help?")
@@ -265,53 +330,66 @@ print(a,"...that's a nice name")
 print("-"*30)
 '''b=input("\nyour age?")
 c=input("\nyour gender?")'''
-repeat()
-d=input("tell me!:")
+
 #heyskully()
-#print("you told:",heyskully.u)
-#heyskully.u=d
-	
-if(d=="tell me a joke"):
-	print("\ti have got plenty of them! ;)")
-	meme()
-	e=input("\n Do you want more?")
-	if(e=='Y' or e=='y' or e=='Yes' or e=='yes' or e=='ya' or e=='yup' or e=='yea'):
-		print("\nhmmm...thats! good!")
-		sleep(2)
-		meme()
-		break
-	else:
-		print("\n","-"*42)
-		print("No problem! you can try other things too!")
-		print("-"*42)
-		break
+#print("tell me!:", u)
+#d=u
 
-elif(d=="take a selfie" or d=="selfie" or d=="click a pic" or d=="picture" or d=="photo" or d=="take"):
-	selfie()
 
-elif(d=="play a game"):
-	print("here's what i know to play:")
-	print("\tSnake and ladder \n\t rock paper scissor \n\t tic tac toe")
-	print(" so...")
-	sleep(1)
-	l=input("what did you plan to play?")
-	if(l=="snake and ladder" or l=="Snake & ladder" or l=="snake" or l=="ladder" ):
-		sleep(1)
-		print("you see! i'm gonna win! ;)")  
-		ladder()
-	elif (l=="rock paper scissor" or l=="rps" or l=="Rock" or l=="paper" or l=="scissor"):
-		print("i am pro at this game!")
-		rps()
+while True:
+	repeat()
+	d=input("tell ra rae:")
 			
+	if(d=="tell me a joke"):
+		print("\ti have got plenty of them! ;)")
+		meme()
+		e=input("\n Do you want more?")
+		if(e=='Y' or e=='y' or e=='Yes' or e=='yes' or e=='ya' or e=='yup' or e=='yea'):
+			print("\nhmmm...thats! good!")
+			sleep(2)
+			meme()
+			continue
+		else:
+			print("\n","-"*42)
+			print("No problem! you can try other things too!")
+			print("-"*42)
+			continue
 
-elif(d=="search for anything"):
-	sleep(1)
-	google()
-elif(d=="calculate"):
-	print("i am a maths freak! you know!")
-	sleep(1)
-	calcii()
-elif(d=="play a video"):
-	print("i can singer better than justin bieber but i will let youtube do the work!")
-	sleep(1)
-	youtube()
+	elif(d=="take a selfie" or d=="selfie" or d=="click a pic" or d=="picture" or d=="photo" or d=="take"):
+		selfie()
+		continue
+
+	elif(d=="play a game"):
+		print("here's what i know to play:")
+		print("\tSnake and ladder \n\t rock paper scissor \n\t tic tac toe")
+		print(" so...")
+		sleep(1)
+		l=input("what did you plan to play?")
+		if(l=="snake and ladder" or l=="Snake & ladder" or l=="snake" or l=="ladder" ):
+			sleep(1)
+			print("you see! i'm gonna win! ;)")  
+			ladder()
+			continue
+		elif (l=="rock paper scissor" or l=="rps" or l=="Rock" or l=="paper" or l=="scissor"):
+			print("i am pro at this game!")
+			rps()
+			continue	
+
+	elif(d=="search for anything"):
+		sleep(1)
+		google()
+		continue
+	elif(d=="calculate"):
+		print("I am a maths freak! you know!")
+		sleep(1)
+		calcii()
+		continue
+	elif(d=="play a video"):
+		print("I can singer better than Justin Bieber but i will let youtube do the work!")
+		sleep(1)
+		youtube()
+		continue
+
+	elif(d=="maps"):
+		maps()
+		continue	
