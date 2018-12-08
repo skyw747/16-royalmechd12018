@@ -1,22 +1,22 @@
+#global u
 def maps(): 
 	import webbrowser
 	query=input("where do you wanna go?");
 	url = "https://www.google.com/maps/@13.1228551,77.6593282,15zsearch?q=" + (str(query)) + "&oq=" + (
 	str(query)) + "&gs_l=serp.12..0i71l8.0.0.0.6391.0.0.0.0.0.0.0.0..0.0....0...1c..64.serp..0.0.0.UiQhpfaBsuU"
 	webbrowser.open(url)
-
 def heyskully():
 	import speech_recognition as sr
-	global u
-	
+	global x
+		
 	r=sr.Recognizer()
 	with sr.Microphone() as mc:
 		r.adjust_for_ambient_noise(mc,duration=5)
 		r.dynamic_energy_thershold = True
 		print('say!!!')
-		audio = r.listen(mc)
+		audio = r.listen(mc)     
 	try:
-		u=r.recognize_google(audio)
+		x=r.recognize_google(audio)
 	except sr.UnknownValueError:
 		print("I didn't get that!")
 	except sr. RequestError as e:
@@ -310,7 +310,7 @@ print('\t\t\t        "*$c  "$$$$$$$P"')
 print('\t\t\t          """*$$$$$$$"')
 
 
-print("\t\t||*****Hi there! I'm Skully*******\t||")
+print("\t\t\t||*****Hi there! I'm Skully*******\t||")
 
 sleep(1)
 print("\n","-"*16)
@@ -331,15 +331,12 @@ print("-"*30)
 '''b=input("\nyour age?")
 c=input("\nyour gender?")'''
 
-#heyskully()
-#print("tell me!:", u)
-#d=u
-
-
 while True:
 	repeat()
-	d=input("tell ra rae:")
-			
+	heyskully()
+	print("tell me:",x)
+	#d=input("adda pakki:")
+	d=x		
 	if(d=="tell me a joke"):
 		print("\ti have got plenty of them! ;)")
 		meme()
@@ -375,7 +372,7 @@ while True:
 			rps()
 			continue	
 
-	elif(d=="search for anything"):
+	elif(d=="search for anything" or d=="search" or d=="anything" or d=="google" or d=="search" or d=="search"):
 		sleep(1)
 		google()
 		continue
@@ -392,4 +389,7 @@ while True:
 
 	elif(d=="maps"):
 		maps()
-		continue	
+		continue
+	else:
+		print("I didn't get that! But you can try again!")
+		continue		
