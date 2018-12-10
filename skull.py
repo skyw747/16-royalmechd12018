@@ -1,4 +1,11 @@
-#global u
+def legends():
+	from PIL import Image
+		a={1:"#location",2:"#location",3:"#location",4:"#location"}
+		for i in range(1,5):
+			c=a[i]
+			with Image.open(c) as img:
+				img.show()
+
 def maps(): 
 	import webbrowser
 	query=input("where do you wanna go?");
